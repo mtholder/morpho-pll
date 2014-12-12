@@ -11,7 +11,16 @@
 #define rax_malloc malloc
 #define rax_realloc realloc
 #define rax_free free
+#ifndef NON_POSIX
 #define rax_posix_memalign posix_memalign
+#else
+#define rax_posix_memalign nonposix_memalign
+int nonposix_memalign(void **p, size_t align, size_t size);
+inline int nonposix_memalign(void **ptr, size_t , size_t size) {
+    *ptr = malloc(size);
+    return (*ptr == 0 ? 1 : 0);
+}
+#endif
 #define rax_calloc calloc
 //#define rax_malloc_aligned(x) memalign(PLL_BYTE_ALIGNMENT,x)
 
