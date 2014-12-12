@@ -99,6 +99,7 @@ AM_CONDITIONAL(BUILD_AVX_PTHREADS, test "x${have_avx_pthreads}" = "xyes")
 AM_CONDITIONAL(BUILD_SSE3, test "x${have_sse3}" = "xyes")
 AM_CONDITIONAL(BUILD_SSE3_PTHREADS, test "x${have_sse3_pthreads}" = "xyes")
 AM_CONDITIONAL(BUILD_MPI, test "x${have_mpi}" = "xyes")
+                 man/Makefile
 
 AC_SUBST(LIBPLL_VERSION)
 AC_SUBST(LIBPLL_MAJOR)
@@ -112,5 +113,6 @@ AC_CONFIG_FILES([Makefile
                  MPI/Makefile
                  src/Makefile
                  man/Makefile
+                 examples/rax-search/Makefile
                  examples/Makefile])
 AC_OUTPUT
