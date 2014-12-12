@@ -83,3 +83,10 @@ pllStackClear (pllStack ** stack)
   while (*stack) pllStackPop (stack);
 }
 
+#if defined (NON_POSIX) 
+ int nonposix_memalign(void **ptr, size_t align, size_t size) {
+    *ptr = malloc(size);
+    return (*ptr == 0 ? 1 : 0);
+}
+
+#endif
