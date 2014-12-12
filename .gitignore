@@ -1,2 +1,5 @@
 *.o
 *.lo
+m4/libtool.m4
+m4/ltoptions.m4
+m4/ltversion.m4
