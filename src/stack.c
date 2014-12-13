@@ -84,10 +84,27 @@ pllStackClear (pllStack ** stack)
 }
 
 #if defined (NON_POSIX) 
- int nonposix_memalign(void **ptr, size_t align, size_t size) {
+/* int nonposix_memalign(void **ptr, size_t align, size_t size) {
     *ptr = malloc(size);
     return (*ptr == 0 ? 1 : 0);
+ http://stackoverflow.com/questions/15475979/sse-mm-load-pd-works-while-mm-store-pd-segfaults 
+void * malloc_float_align
+*/
+int nonposix_memalign(void ** output, unsigned int a/*alignment*/, size_t n, )
+{
+    void * adres = NULL;
+    void * adres2 = NULL;
+    adres = malloc(n);
+    if (adres == 0) {
+      return 1;
+    }
+    size_t adr = (size_t)adres;
+    size_t adr2 = adr+a-(adr&(a-1u)); // a valid address for a alignment
+    adres2 = (void * ) adr2;
+    *output = (void *)adres2;
+    return 1;
 }
+
 
 
 /* Implement the strndup function.
