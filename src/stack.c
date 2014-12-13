@@ -90,11 +90,11 @@ pllStackClear (pllStack ** stack)
  http://stackoverflow.com/questions/15475979/sse-mm-load-pd-works-while-mm-store-pd-segfaults 
 void * malloc_float_align
 */
-int nonposix_memalign(void ** output, unsigned int a/*alignment*/, size_t n, )
+int nonposix_memalign(void ** output, unsigned int a/*alignment*/, size_t n )
 {
     void * adres = NULL;
     void * adres2 = NULL;
-    adres = malloc(n);
+    adres = malloc(a+n);
     if (adres == 0) {
       return 1;
     }
