@@ -1,0 +1,4 @@
+Implementation of the strndup function for NON_POSIX build by:
+    Kaveh R. Ghazi <ghazi@caip.rutgers.edu>.
+    Copyright (C) 2005 Free Software Foundation, Inc.
+
