@@ -102,6 +102,9 @@ int main (int argc, char * argv[])
   pllOptimizeBranchLengths (tr, partitions, 64);
   printf ("Log-likelihood of topology: %f\n", tr->likelihood);
 
+  pllRaxmlSearchAlgorithm (tr, partitions, PLL_TRUE);
+  printf ("Log-likelihood of topology: %f\n", tr->likelihood);
+
   /* Do some cleanup */
   pllAlignmentDataDestroy (alignmentData);
   pllNewickParseDestroy (&newick);
