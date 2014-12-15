@@ -102,7 +102,9 @@ int main (int argc, char * argv[])
 
   pllOptimizeBranchLengths (tr, partitions, 64);
   printf ("Log-likelihood of topology after branch length optimization: %f\n", tr->likelihood);
+  printf ("bailing out...\n");
 
+  return 0;
   pllRaxmlSearchAlgorithm (tr, partitions, PLL_TRUE);
   printf ("Log-likelihood of topology after search: %f\n", tr->likelihood);
   pllOptimizeBranchLengths (tr, partitions, 64);
