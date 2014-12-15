@@ -355,7 +355,7 @@ parse_phylip (pllAlignmentData * alignmentData, int input)
        
        if (token.tokenType == PLL_TOKEN_NEWLINE) break;
 
-       if (token.tokenType != PLL_TOKEN_STRING)
+       if (token.tokenType != PLL_TOKEN_STRING && token.tokenType != PLL_TOKEN_NUMBER)
         {
           rax_free (sequenceLength);
           return (0);
