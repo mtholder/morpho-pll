@@ -98,12 +98,15 @@ int main (int argc, char * argv[])
      tree traversal and evaluate the likelihood of the tree. Therefore, you
      have the guarantee that tr->likelihood the valid likelihood */
   pllInitModel(tr, partitions);
+  printf ("Log-likelihood of topology before branch length optimization: %f\n", tr->likelihood);
 
   pllOptimizeBranchLengths (tr, partitions, 64);
-  printf ("Log-likelihood of topology: %f\n", tr->likelihood);
+  printf ("Log-likelihood of topology after branch length optimization: %f\n", tr->likelihood);
 
   pllRaxmlSearchAlgorithm (tr, partitions, PLL_TRUE);
-  printf ("Log-likelihood of topology: %f\n", tr->likelihood);
+  printf ("Log-likelihood of topology after search: %f\n", tr->likelihood);
+  pllOptimizeBranchLengths (tr, partitions, 64);
+  printf ("Log-likelihood of search topology after branch length optimization: %f\n", tr->likelihood);
 
   /* Do some cleanup */
   pllAlignmentDataDestroy (alignmentData);
