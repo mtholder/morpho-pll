@@ -108,8 +108,11 @@ int main (int argc, char * argv[])
   /* Do some cleanup */
   pllAlignmentDataDestroy (alignmentData);
   pllNewickParseDestroy (&newick);
-  /*pllPartitionsDestroy (tr, &partitions);
-  pllDestroyInstance (tr);*/
+
+# if ! defined(NON_POSIX)
+  pllPartitionsDestroy (tr, &partitions);
+  pllDestroyInstance (tr);
+# endif
   
   return (EXIT_SUCCESS);
 }
