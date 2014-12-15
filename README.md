@@ -10,6 +10,6 @@ shared on GitHub to ease communication about the code, but is not
 intended for widespread use.
 
 Implementation of the strndup function for NON_POSIX build by:
-    Kaveh R. Ghazi <ghazi@caip.rutgers.edu>.
+    Kaveh R. Ghazi <ghazi at-symbol-here caip.rutgers.edu>.
     Copyright (C) 2005 Free Software Foundation, Inc.
 
