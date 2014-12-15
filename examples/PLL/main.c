@@ -98,6 +98,7 @@ int main (int argc, char * argv[])
      tree traversal and evaluate the likelihood of the tree. Therefore, you
      have the guarantee that tr->likelihood the valid likelihood */
   pllInitModel(tr, partitions);
+  printf ("Log-likelihood of topology with initial branch lengths: %f\n", tr->likelihood);
 
   pllOptimizeBranchLengths (tr, partitions, 64);
 
