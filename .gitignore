@@ -23,3 +23,6 @@ stamp-h1
 examples/PLL/db-pll-sse3
 score
 src/.dirstamp
+RAxML_*
+src/libpll-*
+examples/PLL/pll-*
