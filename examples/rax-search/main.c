@@ -81,7 +81,7 @@ int main (int argc, char * argv[])
   pllAlignmentRemoveDups (alignmentData, partitions);
 
   /* Set the topology of the PLL tree from a parsed newick tree */
-  pllTreeInitTopologyNewick (tr, newick, PLL_TRUE);
+  pllTreeInitTopologyNewick (tr, newick, PLL_FALSE);
 
   /* Or instead of the previous function use the next commented line to create
      a random tree topology 
